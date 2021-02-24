@@ -107,42 +107,38 @@ htmlhelp_basename = 'reinforcement-learning-an-introduction-chinesedoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
-on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
-if on_rtd:
-    latex_engine = 'xelatex'
-    latex_use_xindy = False
-    latex_elements = {
-        # The paper size ('letterpaper' or 'a4paper').
-        #
-        # 'papersize': 'letterpaper',
+latex_engine = 'xelatex'
+latex_use_xindy = False
 
-        # The font size ('10pt', '11pt' or '12pt').
-        #
-        # 'pointsize': '10pt',
+latex_docclass = {
+   'manual': 'ctexbook'
+}
 
-        # Additional stuff for the LaTeX preamble.
-        #
-        # 'preamble': '',
+latex_elements = {
+    # The paper size ('letterpaper' or 'a4paper').
+    #
+    'papersize': 'a4paper',
 
-        # Latex figure (float) alignment
-        #
-        # 'figure_align': 'htbp',
-        'papersize': 'a4paper',
-        'pointsize': '11pt',
-        'preamble': r'''
-\usepackage{xeCJK}
-\setCJKmainfont[BoldFont=STZhongsong, ItalicFont=STKaiti]{STSong}
-\setCJKsansfont[BoldFont=STHeiti]{STXihei}
-\setCJKmonofont{STFangsong}
-\XeTeXlinebreaklocale "zh"
-\XeTeXlinebreakskip = 0pt plus 1pt
-\parindent 2em
-\definecolor{VerbatimColor}{rgb}{0.95,0.95,0.95}
-\setcounter{tocdepth}{3}
-\renewcommand\familydefault{\ttdefault}
-\renewcommand\CJKfamilydefault{\CJKrmdefault}
-'''
-    }
+    # The font size ('10pt', '11pt' or '12pt').
+    #
+    'pointsize': '10pt',
+
+    'extraclassoptions': r'fontset = none',
+
+    # Additional stuff for the LaTeX preamble.
+    #
+    'preamble': r'''
+    \usepackage{ctex}
+    \ctexset{fontset = ubuntu}
+    \usepackage{zhlipsum}
+    \usepackage{indentfirst}
+    \setlength{\parindent}{2em}
+    '''
+
+    # Latex figure (float) alignment
+    #
+    # 'figure_align': 'htbp',
+}
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
