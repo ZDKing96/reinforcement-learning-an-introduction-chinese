@@ -109,6 +109,8 @@ htmlhelp_basename = 'reinforcement-learning-an-introduction-chinesedoc'
 # -- Options for LaTeX output ------------------------------------------------
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 if on_rtd:
+    latex_engine = 'xelatex'
+    latex_use_xindy = False
     latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #'papersize': 'letterpaper',
